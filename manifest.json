@@ -15,5 +15,5 @@
     {"file": "uriocr.contract.markpact.md", "validate": "pass", "scheme": "ocr", "contract_id": "uriocr.contract", "kind": "contract", "delivery": "oci-forward"},
     {"file": "urillm-vision.contract.markpact.md", "validate": "pass", "scheme": "llm", "contract_id": "urillm.vision.contract", "kind": "contract", "delivery": "oci-forward"}
   ],
-  "notes": "UriPacks in packs/ are published on markpact.com. Legacy markpact:contract/bundle/implementation files in urisys subprojects validate via `urisys markpact validate` and `scripts/validate-all-markpacts.sh`."
+  "notes": "Thin generated UriPacks: tellmesh/{pack}/markpacts/ (source) and optional copies in packs/. Legacy thick showcases in packs/legacy/. Docker/lab contracts validate via scripts/validate-all-markpacts.sh and scripts/run-markpact-ci.sh."
 }

@@ -21,7 +21,7 @@ echo "redirect -> $INDEX_URL"
 curl -fsS "$INDEX_URL" | python3 -c "import json,sys; d=json.load(sys.stdin); print('schema', d.get('schema')); print('ref', d['artifacts'][0]['ref'][:80])"
 
 echo "== urisys-node fetch-release =="
-cd "$ROOT/../urisys/urisys-node"
+cd "$ROOT/../urisys-node"
 pip install -e . -q
 urisys-node artifact fetch-release --catalog "$CATALOG" --contract "$CONTRACT" --version "$VERSION"
 
