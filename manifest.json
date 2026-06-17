@@ -1,0 +1,19 @@
+{
+  "schema": "markpact.contracts-manifest.v1",
+  "source_repo": "tellmesh/urisys",
+  "extracted_at": "2026-06-16",
+  "packs": [
+    {"file": "uribrowser.markpact.md", "validate": "pass", "scheme": "browser"},
+    {"file": "uridocker.markpact.md", "validate": "pass", "scheme": "docker"},
+    {"file": "uridom-js.markpact.md", "validate": "pass", "scheme": "dom"},
+    {"file": "uriprinter.markpact.md", "validate": "pass", "scheme": "printer"},
+    {"file": "urisystemd.markpact.md", "validate": "pass", "scheme": "systemd"},
+    {"file": "uriusb.markpact.md", "validate": "pass", "scheme": "usb"},
+    {"file": "uristepper.pack.markpact.md", "validate": "pass", "scheme": "stepper", "contract_id": "uristepper-pack"},
+    {"file": "urikvm.contract.markpact.md", "validate": "pass", "scheme": "kvm", "contract_id": "urikvm.contract", "kind": "contract", "delivery": "oci-forward"},
+    {"file": "urihim.contract.markpact.md", "validate": "pass", "scheme": "him", "contract_id": "urihim.contract", "kind": "contract", "delivery": "oci-forward"},
+    {"file": "uriocr.contract.markpact.md", "validate": "pass", "scheme": "ocr", "contract_id": "uriocr.contract", "kind": "contract", "delivery": "oci-forward"},
+    {"file": "urillm-vision.contract.markpact.md", "validate": "pass", "scheme": "llm", "contract_id": "urillm.vision.contract", "kind": "contract", "delivery": "oci-forward"}
+  ],
+  "notes": "UriPacks in packs/ are published on markpact.com. Legacy markpact:contract/bundle/implementation files in urisys subprojects validate via `urisys markpact validate` and `scripts/validate-all-markpacts.sh`."
+}

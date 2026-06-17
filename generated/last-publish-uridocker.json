@@ -1,0 +1,26 @@
+Raw: https://uridocker-markpact.markpact.com/
+Fetch: curl -fsSL https://uridocker-markpact.markpact.com/ -o uridocker-markpact.markpact.md
+{
+  "ok": true,
+  "package": {
+    "id": 5,
+    "owner_user_id": 2,
+    "owner_email": "tomasz@sapletta.pl",
+    "owner_slug": "tomasz",
+    "pack_slug": "uridocker-markpact",
+    "name": "uridocker",
+    "scheme": "docker",
+    "version": "0.1.0",
+    "description": "",
+    "repo_path": "packs/tomasz/uridocker-markpact.markpact.md",
+    "sha256": "8270c693c358e3d059681e8daf9c18d2439b1b6ff33645778203655c4d873e64",
+    "created_at": 1781623942,
+    "updated_at": 1781623942,
+    "url": "https://markpact.com/p/tomasz/uridocker-markpact?lang=pl&theme=auto&action=package",
+    "raw_url": "https://uridocker-markpact.markpact.com/",
+    "raw_url_path": "https://markpact.com/raw/tomasz/uridocker-markpact.markpact.md",
+    "subdomain": "uridocker-markpact.markpact.com",
+    "source": "https://uridocker-markpact.markpact.com/",
+    "install_command": "curl -fsSL https://uridocker-markpact.markpact.com/ -o uridocker-markpact.markpact.md"
+  }
+}

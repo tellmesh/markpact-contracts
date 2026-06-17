@@ -1,0 +1,26 @@
+Raw: https://uriprinter-markpact.markpact.com/
+Fetch: curl -fsSL https://uriprinter-markpact.markpact.com/ -o uriprinter-markpact.markpact.md
+{
+  "ok": true,
+  "package": {
+    "id": 7,
+    "owner_user_id": 2,
+    "owner_email": "tomasz@sapletta.pl",
+    "owner_slug": "tomasz",
+    "pack_slug": "uriprinter-markpact",
+    "name": "uriprinter",
+    "scheme": "printer",
+    "version": "0.1.0",
+    "description": "",
+    "repo_path": "packs/tomasz/uriprinter-markpact.markpact.md",
+    "sha256": "36bb186b9cd50c62e888cd234a03805147ea20236240ee10b019c3ec82bc5c1f",
+    "created_at": 1781623943,
+    "updated_at": 1781623943,
+    "url": "https://markpact.com/p/tomasz/uriprinter-markpact?lang=pl&theme=auto&action=package",
+    "raw_url": "https://uriprinter-markpact.markpact.com/",
+    "raw_url_path": "https://markpact.com/raw/tomasz/uriprinter-markpact.markpact.md",
+    "subdomain": "uriprinter-markpact.markpact.com",
+    "source": "https://uriprinter-markpact.markpact.com/",
+    "install_command": "curl -fsSL https://uriprinter-markpact.markpact.com/ -o uriprinter-markpact.markpact.md"
+  }
+}

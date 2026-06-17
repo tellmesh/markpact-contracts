@@ -1,0 +1,26 @@
+Raw: https://uristepper-pack.markpact.com/
+Fetch: curl -fsSL https://uristepper-pack.markpact.com/ -o uristepper-pack.markpact.md
+{
+  "ok": true,
+  "package": {
+    "id": 3,
+    "owner_user_id": 2,
+    "owner_email": "tomasz@sapletta.pl",
+    "owner_slug": "tomasz",
+    "pack_slug": "uristepper-pack",
+    "name": "uristepper.pack",
+    "scheme": "stepper",
+    "version": "0.1.0",
+    "description": "",
+    "repo_path": "packs/tomasz/uristepper-pack.markpact.md",
+    "sha256": "ffc08e4ee1cbb55345633a793a2710dc6eb46948e8a60bb7b4aa6f041d60ea59",
+    "created_at": 1781623934,
+    "updated_at": 1781623943,
+    "url": "https://markpact.com/p/tomasz/uristepper-pack?lang=pl&theme=auto&action=package",
+    "raw_url": "https://uristepper-pack.markpact.com/",
+    "raw_url_path": "https://markpact.com/raw/tomasz/uristepper-pack.markpact.md",
+    "subdomain": "uristepper-pack.markpact.com",
+    "source": "https://uristepper-pack.markpact.com/",
+    "install_command": "curl -fsSL https://uristepper-pack.markpact.com/ -o uristepper-pack.markpact.md"
+  }
+}

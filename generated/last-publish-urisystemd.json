@@ -1,0 +1,26 @@
+Raw: https://urisystemd-markpact.markpact.com/
+Fetch: curl -fsSL https://urisystemd-markpact.markpact.com/ -o urisystemd-markpact.markpact.md
+{
+  "ok": true,
+  "package": {
+    "id": 8,
+    "owner_user_id": 2,
+    "owner_email": "tomasz@sapletta.pl",
+    "owner_slug": "tomasz",
+    "pack_slug": "urisystemd-markpact",
+    "name": "urisystemd",
+    "scheme": "systemd",
+    "version": "0.1.0",
+    "description": "",
+    "repo_path": "packs/tomasz/urisystemd-markpact.markpact.md",
+    "sha256": "9617a3be96c18f9797dc5dc50ec0a260ef37d039a90aa5c90604b75e8526c16c",
+    "created_at": 1781623943,
+    "updated_at": 1781623943,
+    "url": "https://markpact.com/p/tomasz/urisystemd-markpact?lang=pl&theme=auto&action=package",
+    "raw_url": "https://urisystemd-markpact.markpact.com/",
+    "raw_url_path": "https://markpact.com/raw/tomasz/urisystemd-markpact.markpact.md",
+    "subdomain": "urisystemd-markpact.markpact.com",
+    "source": "https://urisystemd-markpact.markpact.com/",
+    "install_command": "curl -fsSL https://urisystemd-markpact.markpact.com/ -o urisystemd-markpact.markpact.md"
+  }
+}

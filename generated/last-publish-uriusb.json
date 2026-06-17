@@ -1,0 +1,26 @@
+Raw: https://uriusb-markpact.markpact.com/
+Fetch: curl -fsSL https://uriusb-markpact.markpact.com/ -o uriusb-markpact.markpact.md
+{
+  "ok": true,
+  "package": {
+    "id": 9,
+    "owner_user_id": 2,
+    "owner_email": "tomasz@sapletta.pl",
+    "owner_slug": "tomasz",
+    "pack_slug": "uriusb-markpact",
+    "name": "uriusb",
+    "scheme": "usb",
+    "version": "0.1.0",
+    "description": "",
+    "repo_path": "packs/tomasz/uriusb-markpact.markpact.md",
+    "sha256": "3423c1587137b046c8b534a3132f3eec9ffe47052ca0c6754dc2456201b10e17",
+    "created_at": 1781623944,
+    "updated_at": 1781623944,
+    "url": "https://markpact.com/p/tomasz/uriusb-markpact?lang=pl&theme=auto&action=package",
+    "raw_url": "https://uriusb-markpact.markpact.com/",
+    "raw_url_path": "https://markpact.com/raw/tomasz/uriusb-markpact.markpact.md",
+    "subdomain": "uriusb-markpact.markpact.com",
+    "source": "https://uriusb-markpact.markpact.com/",
+    "install_command": "curl -fsSL https://uriusb-markpact.markpact.com/ -o uriusb-markpact.markpact.md"
+  }
+}

@@ -1,0 +1,26 @@
+Raw: https://uridom-js-markpact.markpact.com/
+Fetch: curl -fsSL https://uridom-js-markpact.markpact.com/ -o uridom-js-markpact.markpact.md
+{
+  "ok": true,
+  "package": {
+    "id": 6,
+    "owner_user_id": 2,
+    "owner_email": "tomasz@sapletta.pl",
+    "owner_slug": "tomasz",
+    "pack_slug": "uridom-js-markpact",
+    "name": "uridom-js",
+    "scheme": "dom",
+    "version": "0.1.0",
+    "description": "",
+    "repo_path": "packs/tomasz/uridom-js-markpact.markpact.md",
+    "sha256": "57853ce305162834c55734934bee14a13c5e562aead2af1ba8826aa2f927aead",
+    "created_at": 1781623942,
+    "updated_at": 1781623942,
+    "url": "https://markpact.com/p/tomasz/uridom-js-markpact?lang=pl&theme=auto&action=package",
+    "raw_url": "https://uridom-js-markpact.markpact.com/",
+    "raw_url_path": "https://markpact.com/raw/tomasz/uridom-js-markpact.markpact.md",
+    "subdomain": "uridom-js-markpact.markpact.com",
+    "source": "https://uridom-js-markpact.markpact.com/",
+    "install_command": "curl -fsSL https://uridom-js-markpact.markpact.com/ -o uridom-js-markpact.markpact.md"
+  }
+}

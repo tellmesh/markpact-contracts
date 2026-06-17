@@ -1,0 +1,26 @@
+Raw: https://uribrowser-markpact.markpact.com/
+Fetch: curl -fsSL https://uribrowser-markpact.markpact.com/ -o uribrowser-markpact.markpact.md
+{
+  "ok": true,
+  "package": {
+    "id": 4,
+    "owner_user_id": 2,
+    "owner_email": "tomasz@sapletta.pl",
+    "owner_slug": "tomasz",
+    "pack_slug": "uribrowser-markpact",
+    "name": "uribrowser",
+    "scheme": "browser",
+    "version": "0.1.0",
+    "description": "",
+    "repo_path": "packs/tomasz/uribrowser-markpact.markpact.md",
+    "sha256": "22d3aaf6a5fd5b4f58c1ec454b61ad04fb83f323bde0bbc8995c4905ddbdbf06",
+    "created_at": 1781623942,
+    "updated_at": 1781623942,
+    "url": "https://markpact.com/p/tomasz/uribrowser-markpact?lang=pl&theme=auto&action=package",
+    "raw_url": "https://uribrowser-markpact.markpact.com/",
+    "raw_url_path": "https://markpact.com/raw/tomasz/uribrowser-markpact.markpact.md",
+    "subdomain": "uribrowser-markpact.markpact.com",
+    "source": "https://uribrowser-markpact.markpact.com/",
+    "install_command": "curl -fsSL https://uribrowser-markpact.markpact.com/ -o uribrowser-markpact.markpact.md"
+  }
+}
