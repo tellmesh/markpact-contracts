@@ -22,15 +22,27 @@ description: >
 schemes:
   - process
 
+requires:
+  schemes:
+    - him
+    - kvm
+    - ocr
+    - llm
+    - rdp
+    - browser
+    - shell
+    - env
+
 uses:
-  - him
-  - kvm
-  - ocr
-  - llm
-  - rdp
-  - browser
-  - shell
-  - env
+  packs:
+    - urihim
+    - urikvm
+    - uriocr
+    - urillm
+    - urirdp
+    - uribrowser
+    - urishell
+    - urienv
 
 capabilities:
   - id: process.gui-open-software-center
@@ -96,7 +108,7 @@ modes:
   - adapter
 
 service:
-  port: 8799
+  port_hint: 8799
   path: /uri/call
 
 flow:
@@ -124,6 +136,7 @@ adapter:
 ```yaml markpact:flow id=gui-open-software-center
 flow:
   id: gui-open-software-center
+  profile: uri-flow/v1
   description: Open Software Center via keyboard and click Updates.
 
 defaults:
@@ -151,11 +164,16 @@ do:
 
   - kvm://local/task/command/click-text:
       text: Updates
+
+expect:
+  ocr_contains:
+    - OK
 ```
 
 ```yaml markpact:flow id=llm-guided-gui-click
 flow:
   id: llm-guided-gui-click
+  profile: uri-flow/v1
   description: Screenshot, OCR, LLM vision analyze, then click Install.
 
 defaults:
@@ -177,11 +195,15 @@ do:
 
   - kvm://local/task/command/click-text:
       text: Install
+
+expect:
+  min_vision_confidence: 0.0
 ```
 
 ```yaml markpact:flow id=rdp-kvm-smoke
 flow:
   id: rdp-kvm-smoke
+  profile: uri-flow/v1
   description: RDP session status, prepare target, screenshot, OCR, click OK.
 
 defaults:
@@ -204,11 +226,16 @@ do:
 
   - kvm://local/task/command/click-text:
       text: OK
+
+expect:
+  ocr_contains:
+    - OK
 ```
 
 ```yaml markpact:flow id=install-update-verify-browser
 flow:
   id: install-update-verify-browser
+  profile: uri-flow/v1
   description: Update package index, install Chromium, open health page, click OK.
 
 defaults:
@@ -249,6 +276,9 @@ do:
     payload:
       text: OK
     after: screenshot
+
+expect:
+  opened_url_contains: health
 ```
 
 ```yaml markpact:tests
