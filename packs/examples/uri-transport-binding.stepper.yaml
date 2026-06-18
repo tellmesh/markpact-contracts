@@ -1,0 +1,68 @@
+# TellMesh URI Transport Binding — stepper (Pololu Tic T249 lab profile)
+#
+# Markpact describes capability/process; this file describes how the call envelope
+# is carried over each transport. See markpact-pololu/docs/URI-ROUTER.md
+#
+apiVersion: tellmesh.io/v1
+kind: UriTransportBinding
+metadata:
+  id: stepper-tic-t249
+  version: 0.1.0
+  pack: pololu-tic-t249-stepper
+  target: tic-t249
+
+envelope:
+  request:
+    required: [uri, payload, context]
+    recommended: [request_id, reply_to, trace_id, deadline_ms]
+    fields:
+      uri: string
+      payload: object
+      context: object
+      request_id: string
+      reply_to: string
+      trace_id: string
+      deadline_ms: integer
+
+  response:
+    required: [ok]
+    recommended: [operation, result, error, request_id]
+    fields:
+      ok: boolean
+      operation: string
+      result: object
+      error: object
+      request_id: string
+      events: array
+
+bindings:
+  http:
+    kind: request_response
+    call:
+      method: POST
+      path: /uri/call
+      content_type: application/json
+    discovery:
+      health: GET /healthz
+      routes: GET /uri/routes
+      contract: GET /.well-known/markpact
+
+  mqtt:
+    kind: async_request_response
+    canonical:
+      base: tellmesh/tic-t249
+      request_topic: tellmesh/tic-t249/request
+      legacy_call_topic: tellmesh/tic-t249/call/{request_id}
+      legacy_response_topic: tellmesh/tic-t249/response/{request_id}
+    legacy_compat:
+      base: uritic/tic-t249
+      note: subscribed by uritic-host until pack v0.4.0
+    envelope_on_wire: full_json
+
+  local:
+    kind: in_process
+    note: urisys Python pack or runtime://resolver mock on developer PC
+
+policy_refs:
+  markpact: pololu-tic-t249.stepper.markpact.md
+  payload_schema: profiles/stepper.payload.schema.yaml

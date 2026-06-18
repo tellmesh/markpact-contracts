@@ -16,28 +16,28 @@ capabilities:
   - id: printer.status
     uri: printer://{device}/query/status
     kind: query
-    operation: status
+    operation: printer.status
     handler: markpact://self/python/status
     side_effects: false
     approval: not_required
   - id: printer.print_test_page
     uri: printer://{device}/command/print-test-page
     kind: command
-    operation: print_test_page
+    operation: printer.print_test_page
     handler: markpact://self/python/print_test_page
     side_effects: true
     approval: required
   - id: printer.nozzle_check
     uri: printer://{device}/command/nozzle-check
     kind: command
-    operation: nozzle_check
+    operation: printer.nozzle_check
     handler: markpact://self/python/nozzle_check
     side_effects: true
     approval: required
   - id: printer.clean_head
     uri: printer://{device}/command/clean-head
     kind: command
-    operation: clean_head
+    operation: printer.clean_head
     handler: markpact://self/python/clean_head
     side_effects: true
     approval: required
@@ -119,7 +119,7 @@ tests:
       environment: real
     expect:
       ok: true
-      operation: status
+      operation: printer.status
       result_contains:
         device: epson
         online: true
@@ -131,7 +131,7 @@ tests:
       environment: real
     expect:
       ok: true
-      operation: nozzle_check
+      operation: printer.nozzle_check
       result_contains:
         device: epson
         nozzles_ok: true

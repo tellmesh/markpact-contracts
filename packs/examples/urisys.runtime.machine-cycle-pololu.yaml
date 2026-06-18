@@ -1,0 +1,58 @@
+# Example: machine-cycle-process routed to Pololu Tic T249 external runtime
+#
+# Maps abstract process authority machine-01 to markpact-pololu edge (uritic-host / ESP32).
+# No change to machine-cycle-process.markpact.md — only resolver override.
+#
+#   export URISYS_RESOLVER_CONFIG=markpact-contracts/packs/examples/urisys.runtime.machine-cycle-pololu.yaml
+#   urisys markpact run markpact-contracts/packs/machine-cycle-process.markpact.md#machine-cycle \
+#     --approve --dry-run --force
+#
+# PC USB via ticcmd:
+#   endpoint: http://127.0.0.1:8791/uri/call
+# ESP32 I²C (uncomment esp32 target and set uri_host remap):
+#   endpoint: http://esp32-tic.local:8791/uri/call
+
+environment: edge-linux-pololu
+
+uri_aliases:
+  package://chromium/command/install: shell://apt-get
+
+targets:
+  machine-01:
+    platform: pc-linux
+    transport: http
+    endpoint: http://127.0.0.1:8791/uri/call
+    adapter: external
+    uri_host: tic-t249
+    options:
+      timeout_ms: 15000
+
+  operator:
+    platform: desktop-linux
+    transport: local
+    adapter: uriscreen
+
+  local:
+    platform: edge-linux
+    transport: local
+    adapter: uristt
+
+  build:
+    platform: server-linux
+    transport: ssh
+    adapter: urishell
+    options:
+      host: build.internal
+      user: deploy
+
+runtime:
+  default_environment: mock
+  dry_run: true
+  device_profile:
+    axes:
+      x:
+        driver: pololu-tic-t249
+    safety:
+      x:
+        max_single_move_steps: 100000
+        max_speed_sps: 1200

@@ -105,7 +105,7 @@ modes:
 - interface
 - adapter
 service:
-  port: 8793
+  port_hint: 8793
   path: /uri/call
 flow:
   ids:

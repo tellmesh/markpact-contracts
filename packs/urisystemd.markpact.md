@@ -14,14 +14,14 @@ capabilities:
   - id: systemd.status
     uri: systemd://unit/{unit}/query/status
     kind: query
-    operation: status
+    operation: systemd.status
     handler: markpact://self/python/status
     side_effects: false
     approval: not_required
   - id: systemd.restart
     uri: systemd://unit/{unit}/command/restart
     kind: command
-    operation: restart
+    operation: systemd.restart
     handler: markpact://self/python/restart
     side_effects: true
     approval: required
@@ -60,7 +60,7 @@ tests:
       environment: real
     expect:
       ok: true
-      operation: status
+      operation: systemd.status
       result_contains:
         unit: docker.service
   - id: systemd_restart_dry_run
@@ -71,7 +71,7 @@ tests:
       environment: real
     expect:
       ok: true
-      operation: restart
+      operation: systemd.restart
       result_contains:
         unit: docker.service
 ```

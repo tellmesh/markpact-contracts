@@ -15,14 +15,14 @@ capabilities:
   - id: stepper.status
     uri: stepper://{device}/axis/{axis}/query/status
     kind: query
-    operation: status
+    operation: stepper.status
     handler: markpact://self/python/status
     side_effects: false
     approval: not_required
   - id: stepper.move_relative
     uri: stepper://{device}/axis/{axis}/command/move-relative
     kind: command
-    operation: move_relative
+    operation: stepper.move_relative
     handler: markpact://self/python/move_relative
     side_effects: true
     approval: required
@@ -74,7 +74,7 @@ tests:
       environment: mock
     expect:
       ok: true
-      operation: status
+      operation: stepper.status
       result_contains:
         device: machine-01
         axis: x
@@ -90,7 +90,7 @@ tests:
       environment: mock
     expect:
       ok: true
-      operation: move_relative
+      operation: stepper.move_relative
       result_contains:
         moved: false
 ```

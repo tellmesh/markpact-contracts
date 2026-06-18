@@ -1,0 +1,43 @@
+# Example: urisys resolver — Pololu Tic T249 on PC + ESP32 (hybrid lab)
+#
+# Canonical copy aligned with markpact-pololu `make resolver` output.
+# See: markpact-pololu/profiles/targets.yaml
+
+environment: hybrid-lab
+
+targets:
+  tic-t249:
+    platform: pc-linux
+    transport: http
+    endpoint: http://127.0.0.1:8791/uri/call
+    adapter: external
+    options:
+      timeout_ms: 10000
+
+  tic-t249-pc:
+    platform: pc-linux
+    transport: http
+    endpoint: http://127.0.0.1:8791/uri/call
+    adapter: external
+    options:
+      timeout_ms: 10000
+
+  tic-t249-esp32:
+    platform: esp32
+    transport: http
+    endpoint: http://esp32-tic.local:8791/uri/call
+    adapter: external
+    options:
+      timeout_ms: 15000
+
+runtime:
+  default_environment: mock
+  dry_run: true
+  device_profile:
+    axes:
+      x:
+        driver: pololu-tic-t249
+    safety:
+      x:
+        max_single_move_steps: 100000
+        max_speed_sps: 1200

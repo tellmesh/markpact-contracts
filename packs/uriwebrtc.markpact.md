@@ -12,7 +12,8 @@ metadata:
   id: uriwebrtc
   version: '1'
   language: python
-description: WebRTC session mock — HTTP signaling relay and DataChannel URI envelopes.
+description: WebRTC session — HTTP signaling inbox (node) and DataChannel URI envelopes;
+  browser P2P via ifURI /api/webrtc/signal.
 schemes:
 - webrtc
 capabilities:
@@ -70,7 +71,7 @@ modes:
 - interface
 - adapter
 service:
-  port: 8789
+  port_hint: 8789
   path: /uri/call
 flow:
   ids:

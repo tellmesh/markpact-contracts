@@ -15,14 +15,14 @@ capabilities:
   - id: docker.status
     uri: docker://container/{name}/query/status
     kind: query
-    operation: status
+    operation: docker.status
     handler: markpact://self/python/status
     side_effects: false
     approval: not_required
   - id: docker.restart
     uri: docker://container/{name}/command/restart
     kind: command
-    operation: restart
+    operation: docker.restart
     handler: markpact://self/python/restart
     side_effects: true
     approval: required
@@ -71,7 +71,7 @@ tests:
       environment: real
     expect:
       ok: true
-      operation: status
+      operation: docker.status
       result_contains:
         name: web
         state: running
@@ -83,7 +83,7 @@ tests:
       environment: real
     expect:
       ok: true
-      operation: restart
+      operation: docker.restart
       result_contains:
         name: web
         restarted: false

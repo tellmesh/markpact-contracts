@@ -16,28 +16,28 @@ capabilities:
   - id: usb.list_ports
     uri: usb://host/{host}/query/ports
     kind: query
-    operation: list_ports
+    operation: usb.list_ports
     handler: markpact://self/python/list_ports
     side_effects: false
     approval: not_required
   - id: usb.port_status
     uri: usb://port/{port_id}/query/status
     kind: query
-    operation: port_status
+    operation: usb.port_status
     handler: markpact://self/python/port_status
     side_effects: false
     approval: not_required
   - id: usb.enable_port
     uri: usb://port/{port_id}/command/enable
     kind: command
-    operation: enable_port
+    operation: usb.enable_port
     handler: markpact://self/python/enable_port
     side_effects: true
     approval: required
   - id: usb.disable_port
     uri: usb://port/{port_id}/command/disable
     kind: command
-    operation: disable_port
+    operation: usb.disable_port
     handler: markpact://self/python/disable_port
     side_effects: true
     approval: required
@@ -125,7 +125,7 @@ tests:
       environment: real
     expect:
       ok: true
-      operation: list_ports
+      operation: usb.list_ports
       result_contains:
         host: local
         count: 3
@@ -137,7 +137,7 @@ tests:
       environment: real
     expect:
       ok: true
-      operation: disable_port
+      operation: usb.disable_port
       result_contains:
         port_id: 1-2
         enabled: false

@@ -63,7 +63,7 @@ modes:
 - interface
 - adapter
 service:
-  port: 8796
+  port_hint: 8796
   path: /uri/call
 flow:
   ids:
