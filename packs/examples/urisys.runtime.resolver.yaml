@@ -1,0 +1,59 @@
+# Example: runtime resolver config (Etap 3)
+#
+# NOT part of the process Markpact source. Generated or maintained per environment
+# by marksync / deployment tooling and loaded into urisys edge runtime.config.
+#
+# Process Markpact keeps abstract URIs only, e.g.:
+#   stepper://machine-01/axis/x/command/move-relative
+#   screen://operator/monitor/primary/query/frame
+#
+# See: urisys/docs/PROCESS-ARCHITECTURE.md
+#
+# Related examples (Pololu Tic T249 external runtime):
+#   urisys.runtime.pololu-hybrid.yaml       — PC + ESP32 authorities (markpact-pololu)
+#   urisys.runtime.machine-cycle-pololu.yaml — machine-cycle-process → uritic-host / ESP32
+
+environment: edge-linux
+
+# Domain URI → platform adapter (Debian/Ubuntu profile)
+uri_aliases:
+  package://chromium/command/install: shell://apt-get
+
+targets:
+  machine-01:
+    platform: esp32
+    transport: mqtt
+    endpoint: urisys/machine-01/call
+    options:
+      qos: 1
+      timeout_ms: 5000
+
+  operator:
+    platform: desktop-linux
+    transport: local
+    adapter: uriscreen
+
+  local:
+    platform: edge-linux
+    transport: local
+    adapter: uristt
+
+  build:
+    platform: server-linux
+    transport: ssh
+    adapter: urishell
+    options:
+      host: build.internal
+      user: deploy
+
+# Optional: defaults merged into flow context for this environment
+runtime:
+  default_environment: mock
+  device_profile:
+    axes:
+      x:
+        driver: mock
+    safety:
+      x:
+        max_single_move_steps: 10000
+        max_speed_sps: 1200
