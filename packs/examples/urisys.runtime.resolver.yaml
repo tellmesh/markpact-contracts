@@ -28,6 +28,7 @@ targets:
     options:
       qos: 1
       timeout_ms: 5000
+      broker: tcp://mqtt-broker.local:1883
 
   operator:
     platform: desktop-linux

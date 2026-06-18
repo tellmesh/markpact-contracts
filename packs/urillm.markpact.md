@@ -120,8 +120,12 @@ defaults:
   dry_run: true
 do:
 - llm://local/vision/query/analyze
-- llm://local/text/query/plan
-- llm://local/text/query/decide
+- llm://local/text/query/plan:
+    transcript: smoke conformance
+- llm://local/text/query/decide:
+    question: retry?
+    context:
+      error: "502"
 ```
 
 ```markdown markpact:docs
