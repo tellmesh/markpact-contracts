@@ -1,15 +1,7 @@
 # Example: urisys resolver — Pololu Tic T249 on PC + ESP32 (hybrid lab)
 #
-# Use with markpact-pololu flows (tic-t249-hybrid-pc-esp32) or single-authority flows.
-# Source repo: https://github.com/tellmesh/markpact-pololu
-#
-#   export URISYS_RESOLVER_CONFIG=markpact-contracts/packs/examples/urisys.runtime.pololu-hybrid.yaml
-#   urisys markpact run markpact-pololu/markpacts/pololu-tic-t249.stepper.markpact.md#tic-t249-hybrid-pc-esp32 \
-#     --approve --dry-run --force
-#
-# Requires running edge runtimes:
-#   PC:    http://127.0.0.1:8791/uri/call  (uritic-host or docker-compose)
-#   ESP32: http://esp32-tic.local:8791/uri/call
+# Canonical copy aligned with markpact-pololu `make resolver` output.
+# See: markpact-pololu/profiles/targets.yaml
 
 environment: hybrid-lab
 

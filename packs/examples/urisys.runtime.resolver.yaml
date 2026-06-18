@@ -10,6 +10,7 @@
 # See: urisys/docs/PROCESS-ARCHITECTURE.md
 #
 # Related examples (Pololu Tic T249 external runtime):
+#   uri-transport-binding.stepper.yaml     — TellMesh URI Transport Binding (tellmesh.io/v1)
 #   urisys.runtime.pololu-hybrid.yaml       — PC + ESP32 authorities (markpact-pololu)
 #   urisys.runtime.machine-cycle-pololu.yaml — machine-cycle-process → uritic-host / ESP32
 
