@@ -144,7 +144,13 @@ tests:
 ```markdown markpact:docs
 ## Runtime idea
 
-This Markpact is process-level only.
+This Markpact is **process-level only** (what happens — not where).
+
+Three layers (see `urisys/docs/PROCESS-ARCHITECTURE.md`):
+
+1. **Process Markpact** (this file) — URI sequence, policy, uses
+2. **Runtime resolver** — `targets:` per environment (example: `markpact-contracts/packs/examples/urisys.runtime.resolver.yaml`)
+3. **marksync** — sync sources + generate `generated/{esp32,linux,server}/…`
 
 The same URI process can be resolved differently depending on platform:
 
