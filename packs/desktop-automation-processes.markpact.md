@@ -246,7 +246,7 @@ defaults:
 do:
   - id: env_check
     uri: env://runtime/query/health
-    operation: query
+    operation: env.health
     kind: query
 
   - id: apt_update

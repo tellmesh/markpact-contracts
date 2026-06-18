@@ -30,6 +30,13 @@ capabilities:
   handler: python://uribrowserdocker.handlers:open_page
   side_effects: true
   approval: required
+- id: browser-page-open
+  uri: browser://{session}/page/open
+  kind: command
+  operation: browser.page.open
+  handler: python://uribrowserdocker.handlers:open_page
+  side_effects: true
+  approval: required
 - id: browser-page-dom
   uri: browser://{session}/page/query/dom
   kind: query
@@ -39,6 +46,13 @@ capabilities:
   approval: not_required
 - id: browser-page-screenshot
   uri: browser://{session}/page/command/screenshot
+  kind: command
+  operation: browser.page.screenshot
+  handler: python://uribrowserdocker.handlers:screenshot
+  side_effects: true
+  approval: required
+- id: browser-page-screenshot
+  uri: browser://{session}/page/active/screenshot
   kind: command
   operation: browser.page.screenshot
   handler: python://uribrowserdocker.handlers:screenshot
@@ -84,7 +98,7 @@ modes:
 - interface
 - adapter
 service:
-  port: 8792
+  port_hint: 8792
   path: /uri/call
 flow:
   ids:
@@ -128,7 +142,7 @@ defaults:
 do:
 - browser://default/query/status
 - browser://default/page/command/open: {}
-- browser://default/page/query/dom
+- browser://default/page/open: {}
 ```
 
 ```markdown markpact:docs

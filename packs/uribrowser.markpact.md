@@ -19,7 +19,7 @@ capabilities:
   - id: browser.open_page
     uri: browser://{session}/page/open
     kind: command
-    operation: open_page
+    operation: browser.page.open
     handler: markpact://self/python/open_page
     command_type: browser.v1.OpenPageCommand
     success_event_type: browser.v1.PageOpenedEvent
@@ -29,7 +29,7 @@ capabilities:
   - id: browser.get_dom
     uri: browser://{session}/page/dom
     kind: query
-    operation: get_dom
+    operation: browser.page.dom
     handler: markpact://self/python/get_dom
     query_type: browser.v1.GetDomQuery
     result_type: browser.v1.DomSnapshot
@@ -93,7 +93,7 @@ tests:
       environment: real
     expect:
       ok: true
-      operation: open_page
+      operation: browser.page.open
       result_contains:
         session: default
         url: https://example.com
@@ -104,7 +104,7 @@ tests:
       environment: real
     expect:
       ok: true
-      operation: get_dom
+      operation: browser.page.dom
       result_contains:
         session: default
 ```

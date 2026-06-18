@@ -14,7 +14,7 @@ capabilities:
   - id: dom.set_text
     uri: dom://element/{selector}/command/set-text
     kind: command
-    operation: set_text
+    operation: dom.set_text
     handler: markpact://self/js/set_text
     side_effects: true
     approval: required
