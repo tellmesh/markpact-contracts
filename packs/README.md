@@ -49,6 +49,21 @@ Unpack layout (cwd):
 | `interface` | human/CLI route catalog |
 | `adapter` | integration wire (routes + uses + ABI) |
 
+## UriContract (docker / lab)
+
+Generated from pack `manifest.yaml`:
+
+```bash
+cd tellmesh/urisys
+urisys markpact gen-contract ../uribrowser/uribrowserdocker/manifest.yaml \
+  --out ../uribrowser/markpacts/uribrowser.contract.markpact.md --force
+python3 scripts/check_contract_drift.py
+```
+
+`urisys-node`: HTTP transport in `urisys-node.contract.markpact.md`; capability routes (`node://`, `app://`) in `urisys-node.capabilities.markpact.md` from `urisys-node/urisysnode/manifest.yaml`.
+
+**Deprecated:** `uri-packs/` and `legacy/` — use promoted pack manifests instead.
+
 ## Legacy
 
 Thick `*.showcase.markpact.md` (embedded handlers) live in [`legacy/`](legacy/) — **draft only**, do not regenerate.

@@ -1,5 +1,7 @@
 # UriProcess Pack: desktop-automation-flows
 
+> **Schemes:** promoted packs use `urimail://`, `urioffice://`, `browser://`, `kvm://`, `him://` — not legacy `mail://` / `office://` from `uri-packs/`.
+
 Procesy z [`tellmesh/examples/39_system_automations`](../../tellmesh/examples/39_system_automations) —
 opisane jako **URI Flow Contract** (graf intencji, bez handlerów użytkownika).
 

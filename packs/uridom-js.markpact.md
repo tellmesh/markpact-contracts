@@ -31,5 +31,5 @@ export async function handle(payload, context) {
 ```
 
 ```markdown markpact:docs
-JS Markpact może być kompilowany przez przyszły `urisys-js` do modułu ESM i rejestrowany w `uricore-js`.
+JS Markpact może być kompilowany przez przyszły `urisys-js` do modułu ESM i rejestrowany w `uricontrol-js`.
 ```
