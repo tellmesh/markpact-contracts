@@ -26,6 +26,7 @@ targets:
     transport: mqtt
     endpoint: urisys/machine-01/call
     options:
+      broker: localhost  # Replace with the broker hostname for the deployment.
       qos: 1
       timeout_ms: 5000
 
