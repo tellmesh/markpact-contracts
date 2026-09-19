@@ -114,14 +114,18 @@ tests:
 ```yaml markpact:flow id=llm-smoke
 flow:
   id: llm-smoke
-  description: Smoke llm:// routes (generated from manifest).
+  description: Smoke llm:// routes with the required text inputs.
 defaults:
   approved: true
   dry_run: true
 do:
 - llm://local/vision/query/analyze
-- llm://local/text/query/plan
-- llm://local/text/query/decide
+- llm://local/text/query/plan:
+    transcript: Show the current status
+- llm://local/text/query/decide:
+    question: Should the failed gateway request be retried?
+    context:
+      status: 502
 ```
 
 ```markdown markpact:docs
